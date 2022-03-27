@@ -1,0 +1,27 @@
+<h4 class="text-primary mt-4"> Task List:</h4>
+ <div style="overflow-y: auto;height: 250px;"> 
+<div class="m-3">
+    <div class="p-2 shadow">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Task name</th>
+                <th scope="col">Task Description</th>
+                <th scope="col">Repeating Task</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of listData;let i = index">
+                <th scope="row">  <input class="form-check-input" type="checkbox" (change)="addToDone(item,i)" value="" id="flexCheckDefault"></th>
+                <td>{{item.taskName}}</td>
+                <td>{{item.taskDescription}}</td>
+                <td>{{item.taskRepeating}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+</div>
+<app-done-to-do-list (unDoneTaskFunction)="unDoneTaskFunction($event)" [doneToDo]="doneToDOTask"></app-done-to-do-list>
+<p-toast position="top-right"></p-toast>

@@ -1,0 +1,38 @@
+<div class="container-fluid bg-light">
+    <div class="container bg-light">
+        <div class="row mt-4" style="height: 500px;">
+            <div class="col"></div>
+            <div class="col-md-6 bg-white shadow">
+                <div class="card bg-warning mt-4">
+                    <h4 class="text-white ps-3 pt-2 pb-2"> To Do List</h4>
+                </div>
+                <div class="shadow">
+                    <form [formGroup]="form">
+                        <div class="form-group ps-4 pt-2 pb-2 pe-4">
+                            <label>Task name</label>
+                            <input type="text" class="form-control" formControlName="taskName"
+                                placeholder="Name of task" aria-label="Username" />
+                        </div>
+                        <div class="form-group ps-4 pt-2 pb-2 pe-4">
+                            <label>Task Description</label>
+                            <textarea class="form-control" formControlName="taskDescription"
+                                placeholder="Description of the task"></textarea>
+                        </div>
+                        <div class="ps-4 pt-2 pb-2 pe-4">
+                            <label>Repeating Task</label>
+                            <select class="form-select " formControlName="taskRepeating"
+                                aria-label="Default select example">
+                                <option value="" selected>Select repeating task</option>
+                                <option value="Y">Y</option>
+                                <option value="N">N</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <app-to-do-list [listData]="formValue"> </app-to-do-list>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+
+    <p-toast position="top-right"></p-toast>
